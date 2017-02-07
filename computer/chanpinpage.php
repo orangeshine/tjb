@@ -13,7 +13,7 @@
 	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-  <link rel="stylesheet" href="http://www.juliedu.com/wp-content/themes/cool2/article2.css">
+  <link rel="stylesheet" href="http://www.juliedu.com/wp-content/themes/computer/article2.css">
 
 	<script src="http://www.juliedu.com/jquery-2.2.2.min.js"></script>
 	<script type="text/javascript" src="http://www.juliedu.com/swiper.jquery.min.js"></script>

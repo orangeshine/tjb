@@ -6,7 +6,7 @@
 
 	<meta name="viewport" content="width=640,user-scalable=no, minimal-ui">
 
-	<link rel="stylesheet" href="http://www.juliedu.com/wp-content/themes/cool2/article.css">
+	<link rel="stylesheet" href="http://www.juliedu.com/wp-content/themes/computer/article.css">
 	<link rel="stylesheet" type="text/css" href="http://www.juliedu.com/css/iconfont.css">
 
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />

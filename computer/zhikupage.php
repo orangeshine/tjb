@@ -13,7 +13,7 @@
 	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<link rel="stylesheet" href=http://www.juliedu.com/wp-content/themes/cool2/article2.css?v=1">
+	<link rel="stylesheet" href=http://www.juliedu.com/wp-content/themes/computer/article2.css?v=1">
 
 
 </head>
