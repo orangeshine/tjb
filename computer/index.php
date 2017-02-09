@@ -22,15 +22,129 @@
  
 	?>
 </title>
-    <link rel="icon" href="http://www.juliedu.com/wp-content/uploads/2017/01/logo3.jpg" sizes="32x32">
-    <link rel="icon" href="http://www.juliedu.com/wp-content/uploads/2017/01/logo3.jpg" sizes="192x192">
-    <link rel="apple-touch-icon-precomposed" href="http://www.juliedu.com/wp-content/uploads/2017/01/logo3.jpg">
-    <meta name="msapplication-TileImage" content="http://www.juliedu.com/wp-content/uploads/2017/01/logo3.jpg">
+    <link rel="icon" href="http://www.juliedu.com/wp-content/uploads/2017/01/cropped-logo.png" sizes="32x32">
+    <link rel="icon" href="http://www.juliedu.com/wp-content/uploads/2017/01/cropped-logo.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="http://www.juliedu.com/wp-content/uploads/2017/01/cropped-logo.png">
+    <meta name="msapplication-TileImage" content="http://www.juliedu.com/wp-content/uploads/2017/01/cropped-logo.png">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
    
     <script src="http://www.juliedu.com/jquery-2.2.2.min.js"></script>
     <script type="text/javascript" src="http://www.juliedu.com/swiper.jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://www.juliedu.com/swiper.css">
+    <style>
+      .sub_title1
+      {
+        float:left;
+        width:820px;
+      }
+      .sub_title2
+      {
+        float:right;
+        width:304px;
+      }
+      .sub_title span
+      {
+        margin: 30px 0 0 0;
+      }
+      .dt_content{
+        display:inline-block;
+        float:left;
+        width: 800px;
+      }
+      .zt_content
+      {
+        display:inline-block;
+        float:right;
+        height:220px;
+      }
+      .dt_content .content_component {
+          text-align:left;
+          display:block;
+          position:relative;
+          font-size: 16px;
+          border: none;
+          width: 800px;
+          height: 200px;
+          padding: 10px 20px 10px 10px;
+          margin-left:0;
+          background: #fff;
+          webkit-box-shadow: 0 2px 2px #ddd;
+          box-shadow: 0 2px 2px #ddd;
+      }
+      .dt_content .content_img {
+          display: inline-block;
+          float:left;
+      }
+      .dt_content .content_title {
+          text-align: left;
+          font-size: 20px;
+          display: inline-block;
+          position: absolute;
+          width: 30em;
+          margin: 0 0 10px 20px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          -o-text-overflow: ellipsis;
+          overflow: hidden;
+      }
+      .dt_content .zhaiyao {
+          color:#909090;
+          width: 500px;
+          margin-top: 40px;
+          font-size: 14px;
+          line-height: 1.7em;
+          float: right;
+      }
+      .sub_title .more-dt
+        {
+          color:#adadad;
+          float:right;
+          font-size:15px;
+
+        }
+      .sub_title .more-dt:hover
+        {
+          color:#ff5722 !important;
+          transition:0.4s;
+        }
+      .zt_content .content_component{
+          height: 200px;
+      }
+      .zt_content .content_title {
+          display: block;
+          position: relative;
+          height: 33px;
+          width: 285px;
+          text-align: center;
+          color: #fff;
+          line-height: 30px;
+          background: rgba(0, 0, 0, 0.75);
+          top: -213px;
+          width: 20.4em;
+          font-size: 14px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          -o-text-overflow: ellipsis;
+          overflow: hidden;
+          background: rgba(0, 0, 0, 0.75);
+      }
+      .zt_content .content_img .tjlabel {
+          display: block;
+          margin: 0 auto;
+          position: relative;
+          height: 28px;
+          font-size: 16px;
+          width: 120px;
+          text-align: center;
+          color: #FF5722;
+          font-weight: bold;
+          -o-text-overflow: ellipsis;
+          line-height: 28px;
+          background: rgba(255, 255, 255, 0.75);
+          border-radius: 10px;
+          top: -90px;
+      }
+    </style>
   </head>
   <body>
       <div class="top_sec clearfix">
@@ -50,7 +164,6 @@
       <div class="header">
         <div class="top_nav">
           <a href="http://www.juliedu.com"><span class="now">首页</span></a>
-          <a href="http://www.juliedu.com/32-2/"><span>前哨动态</span></a>
           <a href="http://www.juliedu.com/28-2/"><span>主题团建</span></a>
           <a href="http://www.juliedu.com/36-2/"><span>团建资讯</span></a>
           <a href="http://www.juliedu.com/34-2/"><span>团队福利</span></a>  
@@ -64,7 +177,7 @@
           <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
             <div class="swiper-slide">
               <a href="<?php the_permalink(); ?>" target="_blank">
-               <img src="<?php echo get_content_first_image(get_the_content()); ?>" alt="<?php the_title_attribute(); ?>" />
+               <img src="<?php $src = get_post_meta($post->ID, "_meta_carousel_value", true);echo$src; ?>" alt="<?php the_title_attribute(); ?>" />
               </a>
             </div>
           <?php endwhile; ?>
@@ -82,6 +195,7 @@
             <span>一天</span>
             <span>两天</span>
             <span>三天及以上</span>
+            <span>待定</span>
           </div>
           <div class="filter_sec">
             <div class="sec_title">人数</div>
@@ -89,6 +203,7 @@
             <span>20-49人</span>
             <span>50-99人</span>
             <span>100人以上</span>
+            <span>不确定</span>
           </div>
           <div class="filter_sec">
             <div class="sec_title">主题</div>
@@ -96,6 +211,7 @@
             <span>定向团建</span>
             <span>培训团建</span>
             <span>运动团建</span>
+            <span>文化团建</span>
 
           </div>
         </div>
@@ -107,22 +223,37 @@
           <i class="iconfont icon-search"></i>
         </div>
       </div>
-      <div class="sub_title">
-        <span>前哨推荐</span>
+      <div class="sub_title clearfix">
+        <div class="sub_title1 clearfix">
+          <span>前哨动态</span><a href="http://www.juliedu.com/32-2/"><span class="more-dt">查看更多></span></a>
+        </div>
+        <div class="sub_title2 clearfix">
+          <span>前哨推荐</span><a href="http://www.juliedu.com/28-2/"><span class="more-dt">查看更多></span></a>
+        </div>
       </div>
-      <div class="content tj_content index_content">
-        <?php query_posts('showposts=30&cat=4');?>
+      <div class="content tj_content clearfix">
+        <?php query_posts('showposts=20&cat=14');?>
 				<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-					<a class="a-post" href="<?php the_permalink(); ?>" target="_blank">
+					<a class="dt_content" href="<?php the_permalink(); ?>" target="_blank">
+					<div class="post content_component clearfix" id="post-<?php the_ID(); ?>">
+						<div class="content_img post"><img src="<?php echo get_content_first_image(get_the_content()); ?>"></div>
+						<span class="content_title"><?php the_title(); ?></span>
+            <div class="zhaiyao"><?php echo mb_strimwidth(strip_tags($post->post_content),0,400,'......'); ?></div>
+					</div>
+				</a>
+				<?php endwhile; ?>
+				<?php endif; ?>
+
+        <?php query_posts('showposts=20&cat=15');?>
+				<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
+					<a class="zt_content" href="<?php the_permalink(); ?>" target="_blank">
 						<div class="post content_component" id="post-<?php the_ID(); ?>">
-							<div class="content_img post"><img src="<?php $src = get_post_meta($post->ID, "_meta_lunbotu_value", true);
-						  echo$src; ?>"><span><?php $mudidi = get_post_meta($post->ID, "_meta_label1_value", true);
-							echo$mudidi; ?> | <?php $tianshu = get_post_meta($post->ID, "_meta_label2_value", true);
-							echo$tianshu; ?> | <?php $renshu = get_post_meta($post->ID, "_meta_label3_value", true);
-							echo$renshu; ?></span></div>
-						  <span class="content_title"><?php the_title(); ?></span>
-						  <span class="content_price"><?php $qijia3 = get_post_meta($post->ID, "_meta_qijia3_value", true);
+							<div class="content_img post">
+                <img src="<?php $src = get_post_meta($post->ID, "_meta_lunbotu_value", true);echo$src; ?>">
+                <span class="content_title"><?php the_title(); ?></span>
+                <span class="tjlabel"><?php $qijia3 = get_post_meta($post->ID, "_meta_qijia3_value", true);
 						  echo$qijia3; ?>元/场</span>
+              </div>
 						</div>
 					</a>
 				<?php endwhile; ?>
